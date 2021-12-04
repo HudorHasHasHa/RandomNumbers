@@ -17,7 +17,7 @@ const buttonLogic = () => {
   for(let i=0; i<range; i++){
     numbers.push(Math.floor(Math.random() * (max - min + 1)) + min)
   }
-  numbers.sort((a,b) => {return b-a});
+  numbers.sort((a,b) => {return a-b});
   console.log(numbers);
   for(let i=0; i<numbers.length; i++){
     if(numbers[i]%2==0){
