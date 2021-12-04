@@ -11,13 +11,14 @@ const htmlTemplate = (arg) => {
 //
 const buttonLogic = () => {
   const range = 20, max=100, min=1;
-  let numbers = [];
-
+  let numbers = [], oddNums = [], evenNums = [];
+  even.innerHTML = '';
+  odd.innerHTML = '';
   for(let i=0; i<range; i++){
     numbers.push(Math.floor(Math.random() * (max - min + 1)) + min)
   }
-
-
+  numbers.sort((a,b) => {return b-a});
+  console.log(numbers);
   for(let i=0; i<numbers.length; i++){
     if(numbers[i]%2==0){
       even.insertAdjacentHTML('beforeend',htmlTemplate(numbers[i]));
@@ -26,6 +27,7 @@ const buttonLogic = () => {
       odd.insertAdjacentHTML('beforeend', htmlTemplate(numbers[i]));
     }
   }
+
 }
 
 // button event listener
